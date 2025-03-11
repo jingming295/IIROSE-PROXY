@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext", // 必须是 ES 模块以便 Tree Shaking
+        "strict": true,
+        "removeComments": true, // 移除注释
+        "noEmitOnError": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node", // 使用 Node 的标准模块解析方式
+        "jsx": "react-jsx",
+        "jsxImportSource": "preact",
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

@@ -4,31 +4,41 @@ class APP
     {
     }
 
-    async init()
+    async start()
     {
-        if (typeof document === 'undefined')
+        try
+        {
+            if (typeof document === 'undefined')
+            {
+                console.log(
+                    `%c [Ming's IIROSE-PROXY] - FAILED `,
+                    `color: #FF5733; background: black; margin: 1em 0; padding: 5px 0; font-weight: 900`
+                );
+                return;
+            }
+
+            const mainFrame = document.getElementById('mainFrame') as HTMLIFrameElement | null;
+            const mainContainer = document.getElementById('mainContainer') as HTMLDivElement | null;
+            if (!mainContainer) return;
+
+            // 检查 mainFrame 是否存在并注入脚本
+            if (mainFrame && mainFrame.contentWindow && mainFrame.contentDocument)
+            {
+                this.injectScriptIntoIframe(mainFrame);
+            }
+
+            console.log(
+                `%c [Ming's IIROSE-PROXY] - LOADED `,
+                `color: #4CAF50; background: black; margin: 1em 0; padding: 5px 0; font-weight: 900`
+            );
+        } catch (error)
         {
             console.log(
-                `%c [Ming's IIROSE-PROXY] - FAILED `,
+                `%c [Ming's IIROSE-PROXY] - FAILED: ${(error as Error).message} `,
                 `color: #FF5733; background: black; margin: 1em 0; padding: 5px 0; font-weight: 900`
             );
-            return;
         }
 
-        const mainFrame = document.getElementById('mainFrame') as HTMLIFrameElement | null;
-        const mainContainer = document.getElementById('mainContainer') as HTMLDivElement | null;
-        if (!mainContainer) return;
-
-        // 检查 mainFrame 是否存在并注入脚本
-        if (mainFrame && mainFrame.contentWindow && mainFrame.contentDocument)
-        {
-            this.injectScriptIntoIframe(mainFrame);
-        }
-
-        console.log(
-            `%c [Ming's IIROSE-PROXY] - LOADED `,
-            `color: #4CAF50; background: black; margin: 1em 0; padding: 5px 0; font-weight: 900`
-        );
     }
 
     injectScriptIntoIframe(iframe: HTMLIFrameElement)
@@ -62,4 +72,4 @@ class APP
 }
 
 const app = new APP();
-app.init();
+app.start();

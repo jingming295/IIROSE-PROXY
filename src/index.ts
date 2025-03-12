@@ -1,3 +1,5 @@
+import { Init } from "./init/Init";
+
 class APP
 {
     constructor()
@@ -27,9 +29,23 @@ class APP
                 this.injectScriptIntoIframe(mainFrame);
             }
 
+            const functionItemBox = document.getElementsByClassName('functionItemBox')
+
+            if (!functionItemBox.length)
+            {
+                console.log(
+                    `%c [Ming's IIROSE-PROXY] - FAILED: FunctionItemBox Not Found `,
+                    `color: #FF5733; background: black; margin: 1em 0; padding: 5px 0; font-weight: 900`
+                );
+            }
+
+            const systemFCItemBox = functionItemBox[5] as HTMLDivElement
+
+            Init.createComponent(systemFCItemBox)
+
             console.log(
                 `%c [Ming's IIROSE-PROXY] - LOADED `,
-                `color: #4CAF50; background: black; margin: 1em 0; padding: 5px 0; font-weight: 900`
+                `color:rgb(52, 122, 54); background: black; margin: 1em 0; padding: 5px 0; font-weight: 900`
             );
         } catch (error)
         {

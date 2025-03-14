@@ -41,11 +41,11 @@ class APP
 
             const systemFCItemBox = functionItemBox[5] as HTMLDivElement
 
-            Init.createComponent(systemFCItemBox)
+            Init.createComponent(systemFCItemBox, mainContainer)
 
             console.log(
                 `%c [Ming's IIROSE-PROXY] - LOADED `,
-                `color:rgb(52, 122, 54); background: black; margin: 1em 0; padding: 5px 0; font-weight: 900`
+                `color: #4CAF50; background: black; margin: 1em 0; padding: 5px 0; font-weight: 900`
             );
         } catch (error)
         {

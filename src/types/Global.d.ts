@@ -1,4 +1,4 @@
-import jQuery from 'jquery'; // 导入 jQuery 库
+import JQuery from 'jquery'; // 导入 jQuery 库
 
 declare global
 {

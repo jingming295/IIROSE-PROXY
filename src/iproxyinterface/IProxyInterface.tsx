@@ -1,5 +1,4 @@
 import { Component, render } from "preact";
-import '../scss/IProxyInterface.scss'
 import { IproxyFunctionButton } from "../button/IproxyFunctionButton";
 import { closeSidebar } from "../iirose_func/CloseSideBar";
 
@@ -12,69 +11,64 @@ interface IproxyInterfaceState
 {
     active: boolean
 }
+
 export class IProxyInterface extends Component<IproxyInterfaceProps, IproxyInterfaceState>
 {
     state = {
         active: false
     }
+
     constructor()
     {
-        super()
+        super();
     }
 
     componentDidMount(): void
     {
-        const { functionButtonWrapper } = this.props
-        render(< IproxyFunctionButton switchActive={this.switchActive} />, functionButtonWrapper)
+        const { functionButtonWrapper } = this.props;
+        render(<IproxyFunctionButton switchActive={this.switchActive} />, functionButtonWrapper);
 
         window.addEventListener("keydown", this.keyboardCallApp);
     }
 
     render()
     {
-        const { active } = this.state
+        const { active } = this.state;
+
         return (
-            <div className={active ? 'IProxyWrapper' : 'IProxyWrapper HideIProxyWrapper'}>
+            <div className={`tw:fixed tw:inset-0 tw:z-[90000] tw:transition-transform tw:duration-250 tw:ease-in-out tw:origin-right ${active ? '' : 'tw:translate-x-full'}`}>
                 {this.createNavBar()}
-
-                <div className={'IProxyContent'}>
-
-                </div>
+                <div className="tw:w-full tw:h-full tw:bg-gray-200/80"></div>
             </div>
-        )
+        );
     }
 
     createNavBar()
     {
         return (
-            <div className={'IProxyNavigationBar'}>
-                <div className={'LeftComponent'}>
-                    <div className={'NavBarButton '} onClick={this.switchActive}>
-                        <div className={'NavBarButtonIcon mdi-chevron-left'}></div>
-                    </div>
-                    <div className={'NavBarTitle'} id={'NavBarTitle'}>
-                        <div className={'NavBarButtonIcon mdi-server-network'}></div>
-                        <div className={"NavBarButtonText"}>IIROSE-PROXY</div>
-
+            <div className="tw:flex tw:min-h-[40px] tw:bg-transparent tw:justify-between">
+                <div className="tw:flex">
+                    <button className="tw:px-5 tw:flex tw:items-center tw:cursor-pointer tw:text-xl tw:bg-black/50 tw:text-white tw:transition-opacity tw:duration-300 tw:ease-in-out" onClick={this.switchActive}>
+                        <span className="tw:text-lg tw:px-2 tw:mr-5 tw:cursor-pointer">←</span>
+                    </button>
+                    <div className="tw:px-5 tw:flex tw:items-center tw:cursor-auto tw:text-lg tw:bg-white/20 tw:text-white">
+                        <span className="tw:text-lg tw:px-2">🖧</span>
+                        <span className="tw:text-sm tw:transition-all tw:duration-500 tw:ease-in-out">IIROSE-PROXY</span>
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 
     switchActive = () =>
     {
-        closeSidebar()
-        this.setState(
-            {
-                active: !this.state.active
-            }
-        )
+        closeSidebar();
+        this.setState({ active: !this.state.active });
     }
 
     keyboardCallApp = (event: KeyboardEvent) =>
     {
-        console.log(event.key)
+        console.log(event.key);
         if ((event.altKey && event.key === 'q') || (event.altKey && event.key === 'Q'))
         {
             event.preventDefault();

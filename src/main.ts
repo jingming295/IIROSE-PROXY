@@ -1,5 +1,5 @@
 import { Init } from "./init/Init";
-
+import './app.css'
 class APP
 {
     constructor()

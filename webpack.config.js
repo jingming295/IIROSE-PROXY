@@ -1,5 +1,6 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   mode: 'development', // 使用生产模式，自动启用最佳压缩
@@ -51,6 +52,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new ForkTsCheckerWebpackPlugin({
+      async: false, // 确保错误阻止构建
+    })
+  ],
   optimization: {
     minimize: true,
     usedExports: true,

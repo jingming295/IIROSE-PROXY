@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "html-entities": "^2.6.0",
     "preact": "^10.26.4"
   },
   "devDependencies": {
@@ -10,6 +11,7 @@
     "babel-loader": "^10.0.0",
     "babel-plugin-minify-dead-code-elimination": "^0.5.2",
     "css-loader": "^7.1.2",
+    "fork-ts-checker-webpack-plugin": "^9.1.0",
     "html-webpack-plugin": "^5.6.3",
     "sass": "^1.78.0",
     "sass-loader": "^16.0.1",

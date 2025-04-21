@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
         "target": "ESNext",
         "module": "ESNext", // 必须是 ES 模块以便 Tree Shaking
         "strict": true,

@@ -1,6 +1,7 @@
 import { Component, render } from "preact";
 import { IproxyFunctionButton } from "../button/IproxyFunctionButton";
 import { closeSidebar } from "../iirose_func/CloseSideBar";
+import '../app.css'
 
 interface IproxyInterfaceProps
 {
@@ -34,26 +35,29 @@ export class IProxyInterface extends Component<IproxyInterfaceProps, IproxyInter
     render()
     {
         const { active } = this.state;
-
         return (
-            <div className={`tw:fixed tw:inset-0 tw:z-[90000] tw:transition-transform tw:duration-250 tw:ease-in-out tw:origin-right ${active ? '' : 'tw:translate-x-full'}`}>
+            <div className={`fixed inset-0 z-[90000] transition-transform duration-250 ease-in-out origin-right ${active ? '' : 'translate-x-full'}`}>
                 {this.createNavBar()}
-                <div className="tw:w-full tw:h-full tw:bg-gray-200/80"></div>
+                <div className="w-full h-full bg-gray-200/80"></div>
             </div>
         );
     }
 
     createNavBar()
     {
+        const navbariconclassname = `font-[md]! text-[24] pl-5 mr-10`
+
+        const buttonclassname = ``
+
         return (
-            <div className="tw:flex tw:min-h-[40px] tw:bg-transparent tw:justify-between">
-                <div className="tw:flex">
-                    <button className="tw:px-5 tw:flex tw:items-center tw:cursor-pointer tw:text-xl tw:bg-black/50 tw:text-white tw:transition-opacity tw:duration-300 tw:ease-in-out" onClick={this.switchActive}>
-                        <span className="tw:text-lg tw:px-2 tw:mr-5 tw:cursor-pointer">←</span>
-                    </button>
-                    <div className="tw:px-5 tw:flex tw:items-center tw:cursor-auto tw:text-lg tw:bg-white/20 tw:text-white">
-                        <span className="tw:text-lg tw:px-2">🖧</span>
-                        <span className="tw:text-sm tw:transition-all tw:duration-500 tw:ease-in-out">IIROSE-PROXY</span>
+            <div className="flex min-h-[40px] bg-transparent justify-between">
+                <div className="flex">
+                    <div className="flex items-center cursor-pointer bg-black/50 text-white transition-opacity duration-300 ease-in-out px-10" onClick={this.switchActive}>
+                        <div className={`mdi-chevron-left ${navbariconclassname}`}></div>
+                    </div>
+                    <div className="px-5 flex items-center cursor-auto text-lg bg-white/20 text-white">
+                        <span className={`mdi-server-network ${navbariconclassname}`}></span>
+                        <span className="text-sm transition-all duration-500 ease-in-out">IIROSE-PROXY</span>
                     </div>
                 </div>
             </div>

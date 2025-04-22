@@ -16,7 +16,7 @@ interface IproxyInterfaceState
 export class IProxyInterface extends Component<IproxyInterfaceProps, IproxyInterfaceState>
 {
     state = {
-        active: false
+        active: true
     }
 
     constructor()
@@ -45,14 +45,12 @@ export class IProxyInterface extends Component<IproxyInterfaceProps, IproxyInter
 
     createNavBar()
     {
-        const navbariconclassname = `font-[md]! text-[24] pl-5 mr-10`
-
-        const buttonclassname = ``
+        const navbariconclassname = `font-[md]! pl-[10] mr-[20] text-[24px]`
 
         return (
             <div className="flex min-h-[40px] bg-transparent justify-between">
                 <div className="flex">
-                    <div className="flex items-center cursor-pointer bg-black/50 text-white transition-opacity duration-300 ease-in-out px-10" onClick={this.switchActive}>
+                    <div className="flex items-center cursor-pointer bg-black/50 hover:opacity-70 text-white px-[20px] transition-all duration-500 ease-in-out" onClick={this.switchActive}>
                         <div className={`mdi-chevron-left ${navbariconclassname}`}></div>
                     </div>
                     <div className="px-5 flex items-center cursor-auto text-lg bg-white/20 text-white">

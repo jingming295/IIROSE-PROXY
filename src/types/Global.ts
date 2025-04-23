@@ -1,4 +1,3 @@
-import JQuery from 'jquery'; // 导入 jQuery 库
 
 declare global
 {
@@ -56,11 +55,11 @@ declare global
         }
 
         Objs?: {
-            repertory: {
-                albumShowHolder: JQuery<HTMLElement>;
-                albumShow: AlbumShow;
-                albumShowHolderAnimate: JQuery<HTMLElement>;
-            }
+            // repertory: {
+            //     albumShowHolder: JQuery<HTMLElement>;
+            //     albumShow: AlbumShow;
+            //     albumShowHolderAnimate: JQuery<HTMLElement>;
+            // }
 
             mapHolder: {
                 Assets: {
@@ -81,12 +80,13 @@ declare global
             functionHolderAnimate: number
         },
 
-        functionHolder: JQuery,
-        functionHolderDarker: JQuery,
+        // functionHolder: JQuery,
+        // functionHolderDarker: JQuery,
         functionHolderP: number,
         isMobile: boolean,
         functionHolderSlider: HTMLDivElement
-
+        browserWidth: number
+        browserHeight: number
 
     }
 }

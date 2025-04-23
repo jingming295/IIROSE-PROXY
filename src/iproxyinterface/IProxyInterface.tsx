@@ -32,13 +32,33 @@ export class IProxyInterface extends Component<IproxyInterfaceProps, IproxyInter
         window.addEventListener("keydown", this.keyboardCallApp);
     }
 
+    createContent()
+    {
+        return (
+            <div className='bg-[rgba(224,224,224,0.8)] p-[12px] box-border w-full h-full'>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+            </div>
+        )
+    }
+
     render()
     {
         const { active } = this.state;
         return (
             <div className={`fixed inset-0 z-[90000] transition-transform duration-250 ease-in-out origin-right ${active ? '' : 'translate-x-full'}`}>
                 {this.createNavBar()}
-                <div className="w-full h-full bg-gray-200/80"></div>
+                {this.createContent()}
             </div>
         );
     }
@@ -61,6 +81,8 @@ export class IProxyInterface extends Component<IproxyInterfaceProps, IproxyInter
             </div>
         );
     }
+
+
 
     switchActive = () =>
     {

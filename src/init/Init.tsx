@@ -1,5 +1,5 @@
 import { render } from "preact";
-import { IProxyInterface } from "../iproxyinterface/IProxyInterface";
+import { IProxyInterface } from "../page/iproxyinterface/IProxyInterface";
 
 export class Init
 {

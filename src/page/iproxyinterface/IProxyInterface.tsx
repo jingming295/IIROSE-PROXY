@@ -1,7 +1,7 @@
 import { Component, render } from "preact";
-import { IproxyFunctionButton } from "../button/IproxyFunctionButton";
-import { closeSidebar } from "../iirose_func/CloseSideBar";
-import '../app.css'
+import { IproxyFunctionButton } from "../../button/IproxyFunctionButton";
+import { closeSidebar } from "../../iirose_func/CloseSideBar";
+import { SettingCard } from "../components/SettingCard";
 
 interface IproxyInterfaceProps
 {
@@ -35,19 +35,17 @@ export class IProxyInterface extends Component<IproxyInterfaceProps, IproxyInter
     createContent()
     {
         return (
-            <div className='bg-[rgba(224,224,224,0.8)] p-[12px] box-border w-full h-full'>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
-                <div className='h-[200px]  bg-amber-400 m-[12px] float-left'></div>
+            <div className='bg-[rgba(224,224,224,0.8)] box-border w-full h-full'>
+                <div className='p-[12px] w-full grid overflow-auto grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-[12px] box-border'>
+                    < SettingCard />
+                    < SettingCard />
+                    < SettingCard />
+                    < SettingCard />
+                    < SettingCard />
+                    < SettingCard />
+
+                </div>
+
             </div>
         )
     }
@@ -56,7 +54,7 @@ export class IProxyInterface extends Component<IproxyInterfaceProps, IproxyInter
     {
         const { active } = this.state;
         return (
-            <div className={`fixed inset-0 z-[90000] transition-transform duration-250 ease-in-out origin-right ${active ? '' : 'translate-x-full'}`}>
+            <div className={`flex flex-col fixed inset-0 z-[90000] transition-transform duration-250 ease-in-out origin-right ${active ? '' : 'translate-x-full'}`}>
                 {this.createNavBar()}
                 {this.createContent()}
             </div>
@@ -75,7 +73,7 @@ export class IProxyInterface extends Component<IproxyInterfaceProps, IproxyInter
                     </div>
                     <div className="px-5 flex items-center cursor-auto text-lg bg-white/20 text-white">
                         <span className={`mdi-server-network ${navbariconclassname}`}></span>
-                        <span className="text-sm transition-all duration-500 ease-in-out">IIROSE-PROXY</span>
+                        <span className="text-sm transition-all duration-500 ease-in-out font-bold">IIROSE-PROXY</span>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ export class IIROSEUtils
      * @param o 回调函数
      * @returns 
      */
-    public sync(e: number, t: (number | string)[], o: (userInput: string | null) => void)
+    public static sync(e: number, t: (number | string)[], o: (userInput: string | null) => void)
     {
         if (!window.Utils) return;
         window.Utils.sync(e, t, o);
@@ -48,13 +48,13 @@ export class IIROSEUtils
      * @param l 自定义HTML字符串，出现在底端
      * @param n 返回（点击空白处）的回调函数
      */
-    public buildSelect2(i: HTMLElement | undefined | null, a: (string | number)[][], s: (t: HTMLElement, s: string) => void, e: boolean, t: boolean, o: string | undefined | null, r: boolean, l: string | undefined | null, n: () => void)
+    public static buildSelect2(i: HTMLElement | undefined | null, a: (string | number)[][], s: (t: HTMLElement, s: string) => void, e: boolean, t: boolean, o: string | undefined | null, r: boolean, l: string | undefined | null, n: () => void)
     {
         if (!window.Utils) return;
         window.Utils.buildSelect2(i, a, s, e, t, o, r, l, n);
     }
 
-    public getUserCard(uid: string)
+    public static getUserCard(uid: string)
     {
         if (!window.Utils) return;
         const a = document.createElement('span')

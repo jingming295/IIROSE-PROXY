@@ -1,5 +1,5 @@
 import { render } from "preact";
-import { IProxyInterface } from "../page/iproxyinterface/IProxyInterface";
+import { MainApp } from "./MainApp";
 
 export class Init
 {
@@ -10,7 +10,7 @@ export class Init
         systemFCItemBox.insertBefore(functionButtonWrapper, firstChild);
         const iproxyWrapper = document.createElement('div')
         container.appendChild(iproxyWrapper)
-        render(< IProxyInterface
+        render(< MainApp
             functionButtonWrapper={functionButtonWrapper}
         />, iproxyWrapper)
     }

@@ -1,4 +1,4 @@
-import { Init } from "./init/Init";
+import { Init } from "./page";
 import './app.css'
 class APP
 {

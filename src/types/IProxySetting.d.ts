@@ -1,0 +1,4 @@
+interface IProxySetting
+{
+    imageProxy: string
+}

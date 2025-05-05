@@ -1,5 +1,5 @@
 import { Component, render } from "preact";
-import { IproxyFunctionButton } from "../../button/IproxyFunctionButton";
+import { IproxyFunctionButton } from "../components/IproxyFunctionButton";
 import { closeSidebar } from "../../iirose_func/CloseSideBar";
 import { SettingCard } from "../components/SettingCard";
 
